@@ -1,6 +1,9 @@
 def greeting(name)
-  puts name
+  puts "Hello #{name}"
 end 
 
 greeting("Josh") 
-greeting(4)
+
+def multiply(a,b)
+  a*b
+end
