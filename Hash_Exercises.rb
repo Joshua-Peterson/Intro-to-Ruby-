@@ -78,7 +78,7 @@ words =  ['demo', 'none', 'tied', 'evil', 'dome', 'mode', 'live',
           'flow', 'neon']
           
 def is_anagram(arr)
-  ana_index = []
+  anag = []
   sorted_arr =  arr.map {|e|e.chars.sort.join}
   sorted_arr.each_with_index do |elem, id|
     temp = []
@@ -88,12 +88,15 @@ def is_anagram(arr)
         temp.push(arr[idx])
       end 
     end 
-    ana_index.push(temp) unless temp == []
+    anag.push(temp) unless temp == []
   end
-  
-  return ana_index
+  #print anag
+  sorted_anag = anag.map{|list| list = list.sort.uniq}
+  #print sorted_anag
+  sorted_anag = sorted_anag.uniq
+  sorted_anag.map {|anagrams| p anagrams}
     
 end
 
-p is_anagram(words)
+is_anagram(words)
   
